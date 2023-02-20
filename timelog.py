@@ -15,30 +15,37 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import ttk
 
+#Create the initial .csv file in the current working directory and assign it to the logFile variable
 logFile = (Path.cwd() / "bio.csv")
 
+#Convert current time to a string and store it in the currentTime variable in the format: Day, YYYY-MM-DD, hh:mm:ss. 12-hour time format. 
 currentTime = datetime.now().strftime("%a,%Y-%m-%d,%I:%M %p")
 
+#If the log file exists in the current directory, open the log file. Otherwise, create a new file. 
 if logFile.exists():
     logWrite = open(logFile, "a") 
     print("Log file exists. Proceeding.")
 else: 
     logWrite = open(logFile, "w")
     print("Creating new log file.") 
-    
+	
+#Write the current time to the log file with a newline, and print the line to the console for debugging purposes. 
 def logWriteFile(): 
     logWrite.write(currentTime + "\n")
     print(currentTime + "\n")
     
+#Print the current log file to the console. 
 def logReadFile(event):
     logRead = open(Path.cwd() / "bio.csv")
     for i in logRead.readlines(): 
         print(i)   
     
+#Close the log. 
 def logClose():
     logWrite.close()
     print("Log closed")
 
+#If the log file exists, delete it.
 def logDelete():
     if logFile.exists():
         os.remove(logFile)
@@ -52,31 +59,39 @@ root = tk.Tk()
 
 #TK Button interface
 
+#Create the Write button. 
 writeButton = ttk.Button(root, text = "Write", command = logWriteFile)
 writeButton.pack()
 
+#Create the Close button. 
 closeButton = ttk.Button(root, text = "Close", command = logClose)
 closeButton.pack()
 
+#Create the Delete Log button. 
 deleteButton = ttk.Button(root, text = "Delete Log", command = logDelete)
 deleteButton.pack()
 
+#Necessary for TKinter windows. 
 root.mainloop()
     
+#Set the W key to write to the file. 
 #def write_button():
-#    keyboard.on_press_key("p", logWriteFile)
+#    keyboard.on_press_key("w", logWriteFile)
     
-def read_button():
-    keyboard.on_press_key("r", logReadFile)
+#Set the R key to read the file. 
+#def read_button():
+#    keyboard.on_press_key("r", logReadFile)
 
+#Set the C key to close the file. 
 #def close_button():
 #    keyboard.on_press_key("c", logClose)
 
+#Invoke the keyboard functions. 
 #write_button()
 #close_button()
-read_button()
+#read_button()
 
-
+#Keeps the program open until manually closed by user. 
 while True:
     pass
  
