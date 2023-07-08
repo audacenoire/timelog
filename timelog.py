@@ -1,5 +1,3 @@
-#Testing for GitHub
-
 
 """Imports: 
 	datetime: For managing the timestamp
