@@ -1,13 +1,14 @@
-# timelog
-A simple Python script that outputs timestamps to a CSV. 
+# timelog <br> 
+A simple Python script that outputs timestamps to a CSV. <br> 
 
-You may need to use pip to install the imported modules. 
+You may need to use pip to install the imported modules. <br> 
 
-Required packages: 
-	datetime: For managing the timestamp
-	pathlib: For managing paths
-	keyboard: for monitoring keypresses
-	threading: for multithreading commands
-	tkinter, ttk: For GUI
+Required packages: <br> 
+nbsp;&nbsp;&nbsp;&nbsp;datetime: For managing the timestamp <br> 
+	pathlib: For managing paths <br> 
+	keyboard: for monitoring keypresses <br> 
+	threading: for multithreading commands <br> 
+	tkinter, ttk: For GUI <br> 
   
-  In the future I plan to add support for hardware buttons. 
+Planned features: <br> 
+	
